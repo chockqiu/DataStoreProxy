@@ -2,7 +2,8 @@ package com.chockqiu.datastoreproxy
 
 interface DataStore {
 
-    fun clear()
+    fun clearAll()
+    fun delete(key: String)
     fun write(key: String, obj: Any): Boolean
     fun readString(key: String, def: String?): String?
     fun readBoolean(key: String, def: Boolean): Boolean

@@ -38,6 +38,31 @@ class ExampleInstrumentedTest {
     }
 
     @Test
+    fun testString2() {
+        init()
+        mDataStoreConfigs.expString2 = null
+        var s = mDataStoreConfigs.expString2
+        assertEquals(null, s)
+        val ts = "test string"
+        mDataStoreConfigs.expString2 = ts
+        s = mDataStoreConfigs.expString2
+        assertEquals(ts, s)
+        mDataStoreConfigs.expString2 = null
+    }
+
+    @Test
+    fun testString3() {
+        init()
+        var s = mDataStoreConfigs.expString3
+        assertEquals("", s)
+        val ts = "test string"
+        mDataStoreConfigs.expString3 = ts
+        s = mDataStoreConfigs.expString3
+        assertEquals(ts, s)
+        mDataStoreConfigs.expString3 = null
+    }
+
+    @Test
     fun testBoolean() {
         init()
         var s = mDataStoreConfigs.expBoolean

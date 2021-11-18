@@ -10,8 +10,22 @@ class DataStoreConfig {
 
     /**
      * 字符串测试
+     * 常用形式
      */
     var expString by property("")
+
+    /**
+     * 字符串测试 -- 可空 , 默认值null
+     */
+    //var expString2 by property<String?>(null) -> 不支持这种形式
+    //可使用这种
+    var expString2 by jsonProperty(object : TypeReference<String>() {}, null)
+
+    /**
+     * 字符串测试 -- 可空 , 默认值 ""
+     * 可标识三种状态: 默认值状态/被置空状态/有值状态
+     */
+    var expString3 by property<String?>("")
 
     var expBoolean by property(false)
 

@@ -8,8 +8,12 @@ class MMKVDataStore(name: String) : DataStore {
 
     private var mmkv: MMKV = MMKV.mmkvWithID(name)
 
-    override fun clear() {
+    override fun clearAll() {
         mmkv.clearAll()
+    }
+
+    override fun delete(key: String) {
+        mmkv.removeValueForKey(key)
     }
 
     override fun write(key: String, obj: Any): Boolean {
