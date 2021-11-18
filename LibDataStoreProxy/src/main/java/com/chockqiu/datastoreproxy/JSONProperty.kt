@@ -5,10 +5,10 @@ import com.alibaba.fastjson.TypeReference
 import kotlin.reflect.KProperty
 
 open class JSONProperty<T>(
-    val mDataStore: DataStore,
-    private val mTypeReference: TypeReference<T>,
-    private val default: T?,
-    private val key: String? = null
+    protected val mDataStore: DataStore,
+    protected val mTypeReference: TypeReference<T>,
+    protected val default: T?,
+    protected val key: String? = null
 ) {
 
     open operator fun getValue(thisRef: Any?, property: KProperty<*>): T? =
